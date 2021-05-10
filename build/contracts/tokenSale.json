@@ -1,0 +1,195 @@
+{
+  "contractName": "tokenSale",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.4+commit.c7e474f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/D/Projects/Blockchain/ERC20_Dapp/contracts/tokenSale.sol\":\"tokenSale\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/Projects/Blockchain/ERC20_Dapp/contracts/tokenSale.sol\":{\"keccak256\":\"0x24c8da09ec2654267dfe463d8e60d209abc29e68495ac1c41f5e59c349639d92\",\"urls\":[\"bzz-raw://a2cdf59177f3b5ac92b31f63f22ace099f49ebf1add0439a04eeaae253c5c97a\",\"dweb:/ipfs/QmUCcKuhDtNBQLBPoTCh63UzrhsCmWRaJiWHrin1jB5VVL\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212203d20ac42afa73ed8ee732bcc599d2e43ac214ac546da80bc2ba6647f748e0d7164736f6c63430008040033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212203d20ac42afa73ed8ee732bcc599d2e43ac214ac546da80bc2ba6647f748e0d7164736f6c63430008040033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "27:51:1:-:0;;;52:23;;;;;;;;;;27:51;;;;;;",
+  "deployedSourceMap": "27:51:1:-:0;;;;;",
+  "source": "pragma solidity ^0.8.0;\r\n\r\ncontract tokenSale {\r\n\r\n\tconstructor() {\r\n\t\t\r\n\t}\r\n}",
+  "sourcePath": "D:/Projects/Blockchain/ERC20_Dapp/contracts/tokenSale.sol",
+  "ast": {
+    "absolutePath": "/D/Projects/Blockchain/ERC20_Dapp/contracts/tokenSale.sol",
+    "exportedSymbols": {
+      "tokenSale": [
+        192
+      ]
+    },
+    "id": 193,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 187,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 192,
+        "linearizedBaseContracts": [
+          192
+        ],
+        "name": "tokenSale",
+        "nameLocation": "36:9:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 190,
+              "nodeType": "Block",
+              "src": "66:9:1",
+              "statements": []
+            },
+            "id": 191,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 188,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "63:2:1"
+            },
+            "returnParameters": {
+              "id": 189,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "66:0:1"
+            },
+            "scope": 192,
+            "src": "52:23:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 193,
+        "src": "27:51:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:78:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/Projects/Blockchain/ERC20_Dapp/contracts/tokenSale.sol",
+    "exportedSymbols": {
+      "tokenSale": [
+        192
+      ]
+    },
+    "id": 193,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 187,
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 192,
+        "linearizedBaseContracts": [
+          192
+        ],
+        "name": "tokenSale",
+        "nameLocation": "36:9:1",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 190,
+              "nodeType": "Block",
+              "src": "66:9:1",
+              "statements": []
+            },
+            "id": 191,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nameLocation": "-1:-1:-1",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 188,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "63:2:1"
+            },
+            "returnParameters": {
+              "id": 189,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "66:0:1"
+            },
+            "scope": 192,
+            "src": "52:23:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 193,
+        "src": "27:51:1",
+        "usedErrors": []
+      }
+    ],
+    "src": "0:78:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.4+commit.c7e474f2.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x5533C3463bF6C886a08Cf735981a11cf0Ee10b4B",
+      "transactionHash": "0x30ce6d3a7552e4f345a340d0e1c45e4e0951585f62c218c51613969ccf29cc50"
+    }
+  },
+  "schemaVersion": "3.4.0",
+  "updatedAt": "2021-05-04T00:53:38.494Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
