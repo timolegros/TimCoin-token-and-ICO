@@ -37,5 +37,9 @@ contract tokenSale {
 		emit Sell(msg.sender, _numberOfTokens);
 	}
 
-
+	function endSale() public {
+		require(msg.sender == admin);
+		require(tokenContract.transfer(admin, tokenContract.balanceOf(address(this))));
+		selfdestruct(payable(admin));
+	}
 }

@@ -52,4 +52,30 @@ contract("tokenSale", (accounts) => {
         	assert(error.message.indexOf("revert") >= 0, "Revert error should be raised if the attempting to buy too many tokens")
 		}
 	})
+
+	it("Enables ending the token sale", async () => {
+		let tsi = await tokenSale.deployed()
+		let ti = await token.deployed()
+
+		// attempts to end the token sale from a non-admin account
+		try {
+			await tsi.endSale({ from: buyer })
+			throw(new Error("Only admins should be able to end the token sale"))
+		} catch(error) {
+			assert(error.message.indexOf("revert") >= 0, "Revert error should be raised if non-admin attempts to end the token sale")
+		}
+
+		let receipt = await tsi.endSale({ from: admin })
+		let balance = await ti.balanceOf(admin)
+		assert.equal(balance.toNumber(), 999990, "All unsold tokens should be returned to the admin")
+
+		// check if contract was properly disabled
+		try {
+			let price = await tsi.tokenPrice()
+			throw(new Error("Contact is not disabled"))
+		} catch(error) {
+			assert(error.message.indexOf("Returned values") >= 0, "Contract should be properly destroyed")
+		}
+
+	})
 })
