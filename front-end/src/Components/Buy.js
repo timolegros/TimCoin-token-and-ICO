@@ -6,36 +6,31 @@ import ProgressBar from "react-bootstrap/ProgressBar"
 import {useEffect, useState} from "react";
 
 
-const Buy = ({ tokenContract, tokenSaleContract }) => {
+const Buy = ({ tokenContract, tokenSaleContract, tokensSold, tokenPrice, tokensRemaining, accountAddress, refreshValues }) => {
     const [isLoading, setLoading] = useState(false)
     const [validated, setValidated] = useState(false)
-    const [numberOfTokens, setNumberOfTokens] = useState(0)
-    const [tokensSold, setTokensSold] = useState(null)
-    const [tokensRemaining, setTokensRemaining] = useState(null)
+    const [numberOfTokens, setNumberOfTokens] = useState(1)
 
-    useEffect(() => {
-        tokenSaleContract.tokenPrice().then((tokenPrice) => {
-            console.log(tokenPrice)
-        }).catch((err) => {
-            console.log(err)
-        })
-        async function getTokensRemaining() {
-            // return await tokenContract.balanceOf(tokenSaleContract.address)
-        }
-
-    }, [tokenContract, tokenSaleContract])
 
     const handleSubmit = (event) => {
         if (!isLoading) setLoading(true)
         console.log(numberOfTokens)
-
 
         const form = event.currentTarget
         if (form.checkValidity() === false) {
             event.preventDefault()
             event.stopPropagation()
         } else {
+            event.preventDefault()
+            tokenSaleContract.buyTokens(numberOfTokens, {from: accountAddress, value: numberOfTokens * tokenPrice}).then(() => {
+                refreshValues(tokenContract, tokenSaleContract)
+            }).catch((error) => {
+                if (error.code === 4001) {
+                    console.warn("Transaction Rejected")
+                }
+            })
 
+            setLoading(false)
         }
 
         setValidated(true)
@@ -47,6 +42,7 @@ const Buy = ({ tokenContract, tokenSaleContract }) => {
         return (
             <div>
                 <Col md={{ span: 8, offset: 2 }}>
+                    <p>Current Account Address: {accountAddress}</p>
                     <Row>
                         <Form noValidate validated={validated} onSubmit={handleSubmit} className="mx-auto mt-4">
                             <Form.Row>
@@ -68,10 +64,9 @@ const Buy = ({ tokenContract, tokenSaleContract }) => {
                     </Row>
                     <Row className="justify-content-center">
                         <Col xs={7}>
-                            <ProgressBar animated now={(tokensSold/tokensRemaining) * 100}
-                                         label={`${tokensSold}/${tokensRemaining}`}/>
+                            <ProgressBar animated now={(tokensSold/tokensRemaining) * 100} />
+                            <p>{tokensSold}/{tokensRemaining + tokensSold} Tokens Sold</p>
                         </Col>
-
                     </Row>
                 </Col>
             </div>
